@@ -3,19 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mes activité</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <title>Philippe ALIFA - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
             color: #333;
         }
@@ -23,67 +20,69 @@
         header {
             background-color: #321170;
             color: white;
-            padding: 10px 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+        .profile, .menu {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        .info {
             text-align: center;
-            text-decoration: none;
+            border-left: 1px solid white;
+            border-right: 1px solid white;
+            padding: 0 20px;
+        }
+        .info h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .info p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .profile-pic {
+            border-radius: 10px;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            margin: 0;
+        } 
+        nav ul li a {
             color: white;
-        }
-        header a {
             text-decoration: none;
-            color: white;
+            font-size: 14px;
+        }        
+        nav ul li a:hover {
+            text-decoration: underline;
         }
-        
-        .profile-header {
-            max-width: 900px;
-            margin: auto;
-        }
-        
-        .profile-header img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            display: block;
-            margin: 10px auto;
-        }
-        
-        h1 {
-            font-size: 2.5em;
-        }
-        
-        h2 {
-            color: #321170;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        
-        section {
+        .main-content {
             max-width: 900px;
             margin: 20px auto;
             padding: 20px;
             background-color: white;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-        
-        ul li {
-            margin-bottom: 10px;
-        }
-        
-        a {
-            color: #321170;
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-        
+        }        
         footer {
             text-align: center;
             padding: 10px 0;
@@ -91,56 +90,37 @@
             color: white;
             margin-top: 20px;
         }
-        
     </style>
 </head>
 <body>
     <header>
-        <div class="profile-header">
-            <img src="tPA.png" alt="Photo de Philippe ALIFA">
-            <h1>Philippe ALIFA</h1>
-            <p>Ingénieur en travaux informatique | Développeur | Administrateur réseau</p>
-            <a href="index.html">Accueil</a>
+        <div class="container">
+            <div class="profile">
+                <img src="tPA.png" alt="Philippe ALIFA" class="profile-pic">
+            </div>
+            <div class="info">
+                <h1>PHILIPPE ALIFA</h1>
+                <p>Ingénieur en travaux informatique</p>
+                <p>Développeur</p>
+                <p>Administrateur réseau</p>
+            </div>
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="#">À PROPOS</a></li>
+                        <li><a href="#">CONTACT</a></li>
+                        <li><a href="#">CONSEILS</a></li>
+                        <li><a href="#">AUTRES</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <section id="about">
-        <h2>À propos de moi</h2>
-        <p>Passionné par l'informatique, je suis un professionnel rigoureux avec une solide formation en sciences informatiques de l'Université de N'Djamena. Mes compétences couvrent le développement de logiciels, la programmation, l'administration de bases de données, la gestion de réseaux et l'édition multimédia.</p>
-    </section>
-
-    <section id="formations">
-        <h2>Formations</h2>
-        <ul>
-            <li><strong>Licence en Science Informatique</strong> - Université de N’Djamena (2019-2023)</li>
-            <li><strong>Baccalauréat de l’Enseignement Secondaire, Série D</strong> - Lycée Scientifique de Walia (2014-2018)</li>
-        </ul>
-    </section>
-
-    <section id="experience">
-        <h2>Expériences Professionnelles</h2>
-        <ul>
-            <li><strong>Stage Académique</strong> : Mise en place d’un système d’authentification et de sécurisation du point d’accès (18/09/2023-06/11/2023)</li>
-            <li><strong>Bénévole Formateur</strong> en Initiation Informatique et Outils de l’IA - Agence Universitaire de la Francophonie (12/2023 jusqu’à aujourd'hui)</li>
-        </ul>
-    </section>
-
-    <section id="competences">
-        <h2>Compétences</h2>
-        <ul>
-            <img src="tPA.png" alt="Photo de Philippe ALIFA" style="width:200px;height:200px;>
-            <li>Programmation informatique (C++, Java, Python)</li>
-            <li>Réseaux informatiques</li>
-            <li>Base de données (MySQL, PostgreSQL)</li>
-            <li>Montage vidéo et image</li>
-            <li>Utilisation des logiciels de l'IA</li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Philippe ALIFA. Tous droits réservés.</p>
-    </footer>
+    <main>
+        <section class="main-content">
+            <!-- Le contenu principal ira ici -->
+        </section>
+    </main>
 </body>
 </html>
-
-<!-- # monportfolio-github -->
