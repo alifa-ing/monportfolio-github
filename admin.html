@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Administrateur</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .admin-form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .admin-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .admin-form input[type="file"],
+        .admin-form input[type="text"],
+        .admin-form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .admin-form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .admin-form button:hover {
+            background-color: #45a049;
+        }
+
+        .gallery {
+            max-width: 900px;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            max-width: 300px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .gallery-item p {
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Page Administrateur</h1>
+
+    <div class="admin-form">
+        <label for="imageUpload">Télécharger une image :</label>
+        <input type="file" id="imageUpload" accept="image/*">
+        
+        <label for="comment">Écrire un commentaire :</label>
+        <input type="text" id="comment" placeholder="Ajouter un commentaire">
+
+        <button id="submitBtn">Soumettre</button>
+    </div>
+
+    <section class="gallery" id="gallerySection">
+        <!-- Les images et les commentaires soumis apparaîtront ici -->
+    </section>
+
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            // Récupérer le fichier d'image
+            const imageInput = document.getElementById('imageUpload');
+            const imageFile = imageInput.files[0];
+
+            // Récupérer le commentaire
+            const comment = document.getElementById('comment').value;
+
+            // Vérifier que l'image et le commentaire existent
+            if (!imageFile || !comment) {
+                alert('Veuillez télécharger une image et entrer un commentaire.');
+                return;
+            }
+
+            // Créer un lecteur de fichier pour l'image
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                // Créer un nouvel élément de galerie
+                const gallerySection = document.getElementById('gallerySection');
+                const galleryItem = document.createElement('div');
+                galleryItem.classList.add('gallery-item');
+
+                // Ajouter l'image et le commentaire à l'élément
+                galleryItem.innerHTML = `
+                    <img src="${e.target.result}" alt="Image téléchargée">
+                    <p>${comment}</p>
+                `;
+
+                // Ajouter l'élément à la galerie
+                gallerySection.appendChild(galleryItem);
+            };
+
+            // Lire le fichier image
+            reader.readAsDataURL(imageFile);
+
+            // Réinitialiser le formulaire
+            imageInput.value = '';
+            document.getElementById('comment').value = '';
+        });
+    </script>
+
+</body>
+</html>
