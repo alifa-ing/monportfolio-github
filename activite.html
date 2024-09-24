@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Philippe ALIFA - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         * {
             margin: 0;
@@ -15,8 +14,11 @@
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        
+
         header {
             background-color: #321170;
             color: white;
@@ -25,6 +27,7 @@
             justify-content: center;
             align-items: center;
         }
+
         .container {
             display: flex;
             align-items: center;
@@ -32,49 +35,64 @@
             width: 100%;
             max-width: 1200px;
         }
-        
+
         .profile, .menu {
             flex: 1;
             display: flex;
             justify-content: center;
         }
+
         .info {
             text-align: center;
             border-left: 2px solid white;
             border-right: 2px solid white;
             padding: 0 30px;
         }
+
         .info h1 {
             font-size: 30px;
             font-weight: bold;
         }
+
         .info p {
             font-size: 14px;
             margin: 5px 0;
         }
+
         .profile-pic {
             border-radius: 10px;
             width: 100px;
             height: 100px;
             object-fit: cover;
         }
-        
+
         nav ul {
             list-style: none;
             display: flex;
             gap: 20px;
         }
+
         nav ul li {
             margin: 0;
-        } 
+        }
+
         nav ul li a {
             color: white;
             text-decoration: none;
             font-size: 14px;
-        }        
+        }
+
         nav ul li a:hover {
             text-decoration: underline;
         }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .main-content {
             max-width: 900px;
             margin: 20px auto;
@@ -82,21 +100,37 @@
             background-color: white;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }        
+            width: 100%;
+        }
+
         footer {
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 0;
             background-color: #333;
             color: white;
             margin-top: 20px;
         }
+
         footer a {
             text-decoration: none;
             color: white;
+            font-size: 16px;
             margin: 0 10px;
         }
+
         footer a:hover {
             text-decoration: underline;
+        }
+
+        /* Flex pour footer collé en bas */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex-grow: 1;
         }
     </style>
 </head>
@@ -104,7 +138,7 @@
     <header>
         <div class="container">
             <div class="profile">
-                <img src="tPA.png" alt="Photo de Philippe ALIFA" class="profile-pic">
+                <img src="tPA.png" alt="Philippe ALIFA" class="profile-pic">
             </div>
             <div class="info">
                 <h1>PHILIPPE ALIFA</h1>
@@ -116,7 +150,7 @@
                 <nav>
                     <ul>
                         <li><a href="index.html">À propos de moi</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Contact</a></li>
                         <li><a href="#">Conseil</a></li>
                         <li><a href="#">Autres</a></li>
                     </ul>
@@ -132,15 +166,15 @@
     </main>
 
     <footer>
-        <h2 id="contact">Contact</h2>
+        <h2>Contact</h2>
         <p>Email : <a href="mailto:philipalifa.tpa@gmail.com">philipalifa.tpa@gmail.com</a></p>
         <p>Téléphone : +235 68 15 95 35 / 93 51 52 28</p>
         <p>Adresse : N'Djamena | Walia | Rue 9013</p>
         
         <p>&copy; 2024 Philippe ALIFA. Tous droits réservés.</p>
-        <a href="https://www.linkedin.com/in/philippe-alifa-65577329b" target="_blank">LinkedIn</a> 
-        <a href="https://www.facebook.com/taiwephilippe.alifa.7" target="_blank">Facebook</a> 
-        <a href="https://www.youtube.com/@PhilippeAlifa" target="_blank">YouTube</a>
+        <a href="https://www.linkedin.com/in/philippe-alifa-65577329b" target="_blank">Linkedin</a>
+        <a href="https://www.facebook.com/taiwephilippe.alifa.7" target="_blank">Facebook</a>
+        <a href="https://www.youtube.com/@PhilippeAlifa" target="_blank">Youtube</a>
     </footer>
 </body>
 </html>
