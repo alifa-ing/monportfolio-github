@@ -50,6 +50,7 @@
 </head>
 <body>
     <section class="main-content">
+        <h2>Formulaire d'Upload - Admin</h2>
         <form id="uploadForm" action="activite.html" method="GET" enctype="multipart/form-data">
             <label for="image">Télécharger une image :</label>
             <input type="file" id="image" name="image" accept="image/*" required>
@@ -60,5 +61,12 @@
             <button type="submit">Soumettre</button>
         </form>
     </section>
+
+    <script>
+        // Empêcher l'accès si l'utilisateur n'est pas authentifié
+        if (!localStorage.getItem('loggedIn')) {
+            window.location.href = 'login.html';
+        }
+    </script>
 </body>
 </html>
