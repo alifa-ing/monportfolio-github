@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Philippe ALIFA - Activités</title>
+    <title>Philippe ALIFA - Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -135,6 +135,61 @@
         .footer-right a:hover {
             text-decoration: underline;
         }
+
+        /* Styles pour le formulaire */
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        input[type="file"],
+        textarea,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Styles pour l'affichage des images et commentaires */
+        .image-preview {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .image-preview img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .image-preview p {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -155,7 +210,7 @@
                         <li><a href="index.html">À propos de moi</a></li>
                         <li><a href="#">Contact</a></li>
                         <li><a href="#">Conseil</a></li>
-                        <li><a href="admin.html">Autres</a></li>
+                        <li><a href="#">Autres</a></li>
                     </ul>
                 </nav>
             </div>
@@ -164,7 +219,19 @@
 
     <main>
         <section class="main-content">
-            <!-- Le contenu principal ira ici -->
+            <form id="adminForm">
+                <label for="image">Télécharger une image :</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+
+                <label for="comment">Écrire un commentaire :</label>
+                <textarea id="comment" name="comment" rows="5" placeholder="Écrire un commentaire..." required></textarea>
+
+                <button type="submit">Soumettre</button>
+            </form>
+
+            <div class="image-preview" id="imagePreview">
+                <!-- L'image téléchargée et le commentaire apparaîtront ici -->
+            </div>
         </section>
     </main>
 
@@ -175,7 +242,7 @@
             <p>Téléphone : +235 68 15 95 35 / 93 51 52 28</p>
             <p>Adresse : N'Djamena | Walia | Rue 9013</p>
         </div>
-        
+
         <div class="footer-center">
             <p>&copy; 2024 Philippe ALIFA. Tous droits réservés.</p>
         </div>
@@ -186,5 +253,33 @@
             <a href="https://www.youtube.com/@PhilippeAlifa" target="_blank">YouTube</a>
         </div>
     </footer>
+
+    <script>
+        const form = document.getElementById('adminForm');
+        const imagePreview = document.getElementById('imagePreview');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const image = document.getElementById('image').files[0];
+            const comment = document.getElementById('comment').value;
+
+            if (image && comment) {
+                const reader = new FileReader();
+                reader.onloadend = function() {
+                    const img = document.createElement('img');
+                    img.src = reader.result;
+
+                    const p = document.createElement('p');
+                    p.textContent = comment;
+
+                    imagePreview.innerHTML = ''; // Efface tout ancien contenu
+                    imagePreview.appendChild(img);
+                    imagePreview.appendChild(p);
+                };
+                reader.readAsDataURL(image);
+            }
+        });
+    </script>
 </body>
 </html>
