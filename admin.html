@@ -3,25 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Télécharger des images et écrire des commentaires</title>
+    <title>Admin</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
             color: #333;
         }
 
-        form {
+        .main-content {
             max-width: 600px;
-            margin: 0 auto;
-            background-color: white;
+            margin: 50px auto;
             padding: 20px;
+            background-color: white;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -55,35 +49,16 @@
     </style>
 </head>
 <body>
-    <h1>Page d'administration</h1>
-    <form id="adminForm" action="display.html" method="post" enctype="multipart/form-data" target="_blank">
-        <label for="image">Télécharger une image :</label>
-        <input type="file" id="image" name="image" accept="image/*" required>
+    <section class="main-content">
+        <form id="uploadForm" action="PA-activites.html" method="GET" enctype="multipart/form-data">
+            <label for="image">Télécharger une image :</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
 
-        <label for="comment">Écrire un commentaire :</label>
-        <textarea id="comment" name="comment" rows="5" placeholder="Écrire un commentaire..." required></textarea>
+            <label for="comment">Écrire un commentaire :</label>
+            <textarea id="comment" name="comment" rows="5" placeholder="Écrire un commentaire..." required></textarea>
 
-        <button type="submit">Soumettre</button>
-    </form>
-
-    <script>
-        const form = document.getElementById('adminForm');
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const image = document.getElementById('image').files[0];
-            const comment = document.getElementById('comment').value;
-
-            if (image && comment) {
-                const reader = new FileReader();
-                reader.onloadend = function() {
-                    localStorage.setItem('image', reader.result);
-                    localStorage.setItem('comment', comment);
-                    window.open('display.html', '_blank');
-                };
-                reader.readAsDataURL(image);
-            }
-        });
-    </script>
+            <button type="submit">Soumettre</button>
+        </form>
+    </section>
 </body>
 </html>
