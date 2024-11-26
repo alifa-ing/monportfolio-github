@@ -185,6 +185,29 @@
     <main>
         <section class="main-content">
             <h2>Activités récentes</h2>
+                <section id="activites" class="telechargement-section">
+                    <h2>Fichiers à Télécharger</h2>
+                    <div class="fichiers">
+                        <div class="fichier">
+                            <a href="fichiers/document.docx" download>
+                                <img src="images/word-icon.png" alt="Word" />
+                                Télécharger Document Word
+                            </a>
+                        </div>
+                        <div class="fichier">
+                            <a href="fichiers/tableur.xlsx" download>
+                                <img src="images/excel-icon.png" alt="Excel" />
+                                Télécharger Tableur Excel
+                            </a>
+                        </div>
+                        <div class="fichier">
+                            <a href="fichiers/document.pdf" download>
+                                <img src="images/pdf-icon.png" alt="PDF" />
+                                Télécharger Document PDF
+                            </a>
+                        </div>
+                    </div>
+                </section>
             <div class="image-comment">
                 <img src="data:image/jpeg;base64,<?= $_GET['image'] ?>" alt="Image téléchargée">
                 <p><?= htmlspecialchars($_GET['comment']) ?></p>
