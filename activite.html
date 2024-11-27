@@ -116,6 +116,55 @@
             font-size: 16px;
             color: #333;
         }
+        .telechargement-section {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9e9ff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        
+        .telechargement-section h2 {
+            text-align: center;
+            font-size: 22px;
+            color: #321170;
+            margin-bottom: 20px;
+        }
+        
+        .fichiers {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .fichier {
+            text-align: center;
+            max-width: 150px;
+        }
+        
+        .fichier a {
+            text-decoration: none;
+            color: #321170;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .fichier-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        
+        .fichier a:hover .fichier-icon {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+        
+        .fichier a:hover {
+            color: #1b084c;
+        }
 
         footer {
             display: flex;
