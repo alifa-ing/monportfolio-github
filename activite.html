@@ -151,10 +151,12 @@
         }
         
         .fichier-icon {
-            width: 60px;
-            height: 60px;
+            width: 2.5cm; /* Entre 2 et 3 cm */
+            height: 2.5cm; /* Respecte les proportions carrées */
             margin-bottom: 10px;
             transition: transform 0.3s, opacity 0.3s;
+            object-fit: contain; /* Ajuste l'image sans la déformer */
+            border-radius: 5px; /* Ajoute un léger arrondi aux coins */
         }
         
         .fichier a:hover .fichier-icon {
@@ -243,19 +245,19 @@ Excel et Google Sheets comme outils de manipulation, de calcul et de visualisati
                     <div class="fichiers">
                         <div class="fichier">
                             <a href="Besoin d'analyse.docx" download>
-                                <img src="world.png" alt="Word" />
+                                <img src="world.png" alt="Word" class="fichier-icon" />
                                 Télécharger le fichier World
                             </a>
                         </div>
                         <div class="fichier">
                             <a href="Data-analyse TP.ods" download>
-                                <img src="excel.png" alt="Excel" />
+                                <img src="excel.png" alt="Excel" class="fichier-icon" />
                                 Télécharger le fichier Excel
                             </a>
                         </div>
                         <div class="fichier">
                             <a href="Analyse.pptx" download>
-                                <img src="power.png" alt="Power Point" />
+                                <img src="power.png" alt="Power Point" class="fichier-icon" />
                                 Télécharger le fichier Power Point
                             </a>
                         </div>
@@ -267,13 +269,13 @@ Excel et Google Sheets comme outils de manipulation, de calcul et de visualisati
                     <div class="fichiers">
                         <div class="fichier">
                             <a href="Formation en Cybersecurite.pptx" download>
-                                <img src="power.png" alt="Power Point" />
+                                <img src="power.png" alt="Power Point" class="fichier-icon" />
                                 Télécharger le Fichier Power Point
                             </a>
                         </div>
                         <div class="fichier">
                             <a href="Formation en Cybersecurite.pdf" download>
-                                <img src="pdf.png" alt="PDF" />
+                                <img src="pdf.png" alt="PDF" class="fichier-icon" />
                                 Télécharger fichier pdf
                             </a>
                         </div>
